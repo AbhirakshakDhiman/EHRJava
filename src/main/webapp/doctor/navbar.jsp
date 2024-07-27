@@ -1,6 +1,6 @@
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored = "false" %>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
 	<div class="container-fluid">
 		 <a class="navbar-brand"
 			href="index.jsp"><i class="fa-solid fa-hospital"></i>Smart Hospital</a>
@@ -18,7 +18,7 @@
 			<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="index.jsp">Home</a></li>
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="appointment.jsp">Patient</a></li>
+					aria-current="page" href="patient.jsp">Patient</a></li>
 			
 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

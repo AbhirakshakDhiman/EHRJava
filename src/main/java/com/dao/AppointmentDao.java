@@ -2,8 +2,12 @@ package com.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.entity.Appointment;
+
 
 
 public class AppointmentDao{
@@ -44,4 +48,106 @@ public class AppointmentDao{
 		}
 		return f;
 	}
+	public List<Appointment> getAllAppointmentByDoctorId(int docid) {
+		
+		
+		List<Appointment> list=new ArrayList<>();
+		
+		Appointment ap=null;
+		try {
+			String q="select * from appointment where doctorid=?";
+			
+			PreparedStatement ps=con.prepareStatement(q);
+			
+			ps.setInt(1, docid);
+
+			ResultSet rs= ps.executeQuery();
+			while(rs.next()) {
+				ap=new Appointment();
+				ap.setId(rs.getInt(1));
+				ap.setUserId(rs.getInt(2));
+				ap.setFullname(rs.getString(3));
+				ap.setGender(rs.getString(4));
+				ap.setAge(rs.getString(5));
+				ap.setAppdate(rs.getString(6));
+				ap.setEmail(rs.getString(7));
+				ap.setMob(rs.getString(8));
+				ap.setDiseases(rs.getString(9));
+				ap.setDoctorId(rs.getInt(10));
+				ap.setAddress(rs.getString(11));
+				ap.setStatus(rs.getString(12));
+				list.add(ap);
+				
+			}
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+		}
+			return list;
+		}
+public Appointment getAppointmentById(int id) {
+		
+		
+	
+		
+		Appointment ap=null;
+		try {
+			String q="select * from appointment where id=?";
+			
+			PreparedStatement ps=con.prepareStatement(q);
+			
+			ps.setInt(1, id);
+
+			ResultSet rs= ps.executeQuery();
+			while(rs.next()) {
+				ap=new Appointment();
+				ap.setId(rs.getInt(1));
+				ap.setUserId(rs.getInt(2));
+				ap.setFullname(rs.getString(3));
+				ap.setGender(rs.getString(4));
+				ap.setAge(rs.getString(5));
+				ap.setAppdate(rs.getString(6));
+				ap.setEmail(rs.getString(7));
+				ap.setMob(rs.getString(8));
+				ap.setDiseases(rs.getString(9));
+				ap.setDoctorId(rs.getInt(10));
+				ap.setAddress(rs.getString(11));
+				ap.setStatus(rs.getString(12));
+				
+			}
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+		}
+			return ap;
+		}	
+
+public boolean updateStatus(int id,int doctorid,String comm) {
+	boolean f=false;
+	try {
+		String  q="update appointment set status=? where id=? and doctorid=?";
+		PreparedStatement ps=con.prepareStatement(q);
+		
+		ps.setString(1,comm);
+		ps.setInt(2,id);
+		ps.setInt(3,doctorid);
+		
+		
+		int i=ps.executeUpdate();
+		
+		if(i==1) {
+			f=true;
+		}
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	return f;
+		
+	
+	
+	
+	
+}
 }

@@ -4,50 +4,68 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin Panel</title>
 <%@include file="../component/allcss.jsp" %>
-
+<style type="text/css">
+.paint-card{
+box-shadow:0 0 10px 0 rgba(0,0,0,0.3)
+}
+</style>
 </head>
 <body>
 <%@include file="navbar.jsp" %>
 
 <div class="container p-5">
-<h1 class="text-center fs-3 fw-bolder">Admin Dashboard</h1>
-<div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center">Card title</h5>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center">Card title</h5>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center">Card title</h5>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center">Specialist</h5>
-      </div>
-    </div>
-  </div>
+<div class="row">
+<div class="col-md-6 ">
+<div class="card paint-card">
+<div class="card-body text-center text-success">
+<i class="fas fa-user-md fa-3x"></i><br>
+<p class="fs-4 text-center">
+Doctor<br>12
+</p>
 </div>
 </div>
+</div>
+
+
+
+<div class="col-md-6">
+<div class="card paint-card">
+<div class="card-body text-center text-success">
+<i class="fas fa-user-md fa-3x"></i><br>
+<p class="fs-4 text-center">
+Total Appointment<br>129
+</p>
+</div>
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="card paint-card">
+<div class="card-body text-center text-success">
+<i class="fas fa-user-md fa-3x"></i><br>
+<p class="fs-4 text-center">
+Total Users<br>124
+</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card paint-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<div class="card-body text-center text-success">
+<i class="fas fa-user-md fa-3x"></i><br>
+<p class="fs-4 text-center">
+Specialist<br>8
+</p>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
 
 
 
