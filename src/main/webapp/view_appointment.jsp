@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+            <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
 <%@ page import="com.dao.SpecialistDao"%>
 <%@ page import="com.entity.Appointment"%>
-<%@ page import="com.entity.Doctor"%>
+<%@ page import="com.entity.User"%>
 <%@ page import="com.db.DBconnect"%>
 <%@page import="java.util.List"%>
 <%@page import="com.dao.AppointmentDao" %>
@@ -13,26 +13,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@include file="../component/allcss.jsp" %>
-<style type="text/css">
-.paint-card{
-box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
-}
-</style>
+<%@include file="component/allcss.jsp"%>
 </head>
 <body>
-<c:if test="${empty docObj }">
-<c:redirect url="../doctor_login.jsp"></c:redirect>
-</c:if>
-<%@include file="navbar.jsp" %>
+<%@include file="component/navbar.jsp"%>
 
 <div class="container p-3">
 		<div class="row">
 <div class="col-md-12">
 				<div class="card paint-card">
 					<div class="card-body">
-						<p class="fs-3 text-center">Patient Details</p>
-					
+						<p class="fs-3 text-center"> Previous Appointments</p>
+				
 						<table class="table">
 							<thead>
 								<tr>
@@ -48,9 +40,9 @@ box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
 							</thead>
 							<tbody>
                             <%
-                            Doctor d=(Doctor)session.getAttribute("docObj");
+                            User u=(User)session.getAttribute("userObj");
                             AppointmentDao dao=new AppointmentDao(DBconnect.getCon());
-                            List<Appointment> l=dao.getAllAppointmentByDoctorId(d.getId());
+                            List<Appointment> l=dao.getAllAppointmentByUserId(u.getId());
                             for(Appointment ap: l){
                             	%>
                             	
@@ -63,22 +55,6 @@ box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
                             	<td><%=ap.getMob() %></td>
                             <td><%=ap.getDiseases() %></td>
                             	<td><%=ap.getStatus() %></td>
-                            	
-                            	
-                            	
-                            	<td>
-                            	<%
-                            	if("pending".equals(ap.getStatus())){
-                            		%>
-                            		<a href="comment.jsp?id=<%=ap.getId()%>" class="btn btn-sm btn-success">Comment</a>
-                            	<% }
-                            	
-                            	else{%>
-                            		<a href="#" class="btn btn-sm btn-success btn-sm disabled">Comment</a>
-                            	<%}
-                            	%>
-                            	
-                           
                             	
                             	</tr>
                            <% }

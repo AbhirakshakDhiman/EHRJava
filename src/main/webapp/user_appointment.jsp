@@ -16,12 +16,20 @@
 <%@include file="component/allcss.jsp"%>
 <style type="text/css">
 .backImg {
-	backgroung: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, -4)),
-		url("img/hosp.jpeg");
-	height: 20vh;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, -4)),
+		url("img/wallpaper.jpg");
+	height: 30vh;
 	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+#sideimg{
+height: 30vh;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+
 }
 </style>
 </head>
@@ -34,7 +42,7 @@
 	<div class="container p-3">
 		<div class="row">
 			<div class="col-md-6 p-5">
-				<img alt="" src="img/doc1.jpeg">
+				<img id="sideimg" alt="" src="img/wall3.jpg">
 			</div>
 			<div class="col-md-6">
 				<div class="card paint-card">

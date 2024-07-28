@@ -33,7 +33,7 @@ Doctor<br>12
 <div class="col-md-6">
 <div class="card paint-card">
 <div class="card-body text-center text-success">
-<i class="fas fa-user-md fa-3x"></i><br>
+<i class="fa-solid fa-notes-medical fa-3x"></i><br>
 <p class="fs-4 text-center">
 Total Appointment<br>129
 </p>
@@ -45,7 +45,7 @@ Total Appointment<br>129
 <div class="col-md-6">
 <div class="card paint-card">
 <div class="card-body text-center text-success">
-<i class="fas fa-user-md fa-3x"></i><br>
+<i class="fa-solid fa-address-book fa-3x"></i><br>
 <p class="fs-4 text-center">
 Total Users<br>124
 </p>
@@ -56,7 +56,7 @@ Total Users<br>124
 <div class="col-md-6">
 <div class="card paint-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
 <div class="card-body text-center text-success">
-<i class="fas fa-user-md fa-3x"></i><br>
+<i class="fa-solid fa-stethoscope fa-3x"></i><br>
 <p class="fs-4 text-center">
 Specialist<br>8
 </p>

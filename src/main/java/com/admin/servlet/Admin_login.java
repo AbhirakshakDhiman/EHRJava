@@ -32,7 +32,7 @@ public class Admin_login extends HttpServlet {
 				resp.sendRedirect("admin/index.jsp");
 				}
 				else {
-					session.setAttribute("errormsg", "Register unsuccessfull");
+					session.setAttribute("errormsg", "Login Unsuccessfull");
 					resp.sendRedirect("admin_login.jsp");
 				}
 		}

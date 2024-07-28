@@ -15,7 +15,7 @@
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="doctor.jsp">Doctor</a></li>
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="#">Patient</a></li>
+					aria-current="page" href="patient.jsp">Patient</a></li>
 
 			
 <li class="nav-item dropdown">

@@ -1,5 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored = "false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +18,15 @@
 				<div class="card paint-card">
 					<div class="card-body">
 						<p class="fs-4 text-center">Admin Login</p>
+						
+						<c:if test="${not empty sucMsg }">
+						<p class="text-center text-success fs-3">${sucMsg }</p>
+						<c:remove var="sucMsg" scope="session"/>
+						</c:if>
+							<c:if test="${not empty errormsg }">
+						<p class="text-center text-success fs-3">${errormsg }</p>
+						<c:remove var="errormsg" scope="session"/>
+						</c:if>
 						<form action="adminLogin" method="post">
 							<div class="mb-3">
 								<label class="form-label">Email address</label><input required

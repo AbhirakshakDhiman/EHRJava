@@ -28,7 +28,7 @@
 			<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="user_appointment.jsp">Appointment</a></li>
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="doctor_login.jsp">View Appointment</a></li>
+					aria-current="page" href="view_appointment.jsp">View Appointment</a></li>
 			
 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
